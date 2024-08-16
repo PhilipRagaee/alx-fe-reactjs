@@ -15,7 +15,11 @@ function App() {
     const [count, setCount] = useState(0);
     const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
     return (
+        
         <>
+            <UserContext.Provider value={userData}>
+            <ProfilePage />
+            </UserContext.Provider>
             <Header /> 
             <MainContent /> 
             <UserProfile name="Alice" age="25" bio="Loves hiking and photography" /> 
@@ -40,9 +44,7 @@ function App() {
             <p className="read-the-docs">
                 Click on the Vite and React logos to learn more
             </p>
-            <UserContext.Provider value={userData}>
-            <ProfilePage />
-            </UserContext.Provider>
+            
         </>
     );
 }
