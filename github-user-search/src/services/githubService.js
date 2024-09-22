@@ -11,7 +11,7 @@ export const fetchAdvancedUserData = async (username, location, minRepos) => {
     query += ` repos:>=${minRepos}`;
   }
 
-  const url = `https://api.github.com/search/users?${query}`;
+  const url = `https://api.github.com/search/users?q`;
 
   const response = await axios.get(url);
   
